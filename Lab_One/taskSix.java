@@ -2,8 +2,8 @@ package Lab_One;
 
 import java.util.Scanner;
 
-public class taskThree {
-    public static void main(String args[]){
+    public class taskSix {
+        public static void main(String args[]){
         Scanner scan = new Scanner(System.in);
         
         System.out.print("Input the number of elements to store in the array :");
@@ -19,13 +19,15 @@ public class taskThree {
             arr[i] = scan.nextInt();
         }
 
-        System.out.print("The values stored into the array are: ");
+        System.out.print("The maximum value stored in the array is: ");
 
-        int sum = 0;
+        int min = arr[0];
 
         for(int i=0; i<size; i++){
-            sum = sum+ arr[i];
+            if(arr[i] < min){
+                min = arr[i];
+            }
         }
-        System.out.print(sum);
+        System.out.print(min);
     }
 }
