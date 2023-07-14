@@ -50,12 +50,39 @@ public class insertAfterSearch {
         temp.next = n;
     }
 
+    int count = 0;
     public void traverseList(){
         Node temp = head;
         while(temp != null){
             System.out.print(temp.data);
             temp = temp.next;
+            count = count+1;
         }
+    }
+
+    
+    int mid ;
+    
+    public void insertAtMiddle(int data){
+        mid = count/2;
+        //int counter = 1;
+        System.out.print(mid);
+        Node n = new Node(data);
+        Node curr = head;
+        // while(curr != null){
+        //     if(counter == mid){
+        //         n.data = data;
+        //         n.next = curr.next;
+        //         curr.next = n;
+        //     }
+        //     counter ++;
+        //     curr = curr.next;
+        // }
+        for(int i=1; i<mid; i++){
+            curr = curr.next;
+        }
+        n.next = curr.next;
+        curr.next = n;
     }
     public static void main(String args[]){
         insertAfterSearch l = new insertAfterSearch();
@@ -72,9 +99,17 @@ public class insertAfterSearch {
         l.insertAtEnd(4);
         l.insertAtEnd(6);
         l.insertAtEnd(7);
+        l.insertAtEnd(8);
 
-        l.insertAfter(5);
+        //l.insertAfter(5);
 
+        //l.traverseList();
         l.traverseList();
+       l.insertAtMiddle(1);
+       //System.out.println("count ==");
+        System.out.println(l.mid);
+       l.traverseList();
+       
+        
     }
 }
