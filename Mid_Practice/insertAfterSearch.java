@@ -1,5 +1,7 @@
 package Mid_Practice;
 
+import javax.swing.text.StyledEditorKit;
+
 //import java.util.*;
 
 public class insertAfterSearch {
@@ -54,7 +56,7 @@ public class insertAfterSearch {
     public void traverseList(){
         Node temp = head;
         while(temp != null){
-            System.out.print(temp.data);
+            System.out.print(temp.data + " ");
             temp = temp.next;
             count = count+1;
         }
@@ -84,6 +86,14 @@ public class insertAfterSearch {
         n.next = curr.next;
         curr.next = n;
     }
+    public void printReverse(Node head){
+        if(head == null){
+            return;
+        }
+        System.out.println(head.data);
+        printReverse(head.next);
+        System.out.println(head.data);
+    }
     public static void main(String args[]){
         insertAfterSearch l = new insertAfterSearch();
 
@@ -109,6 +119,7 @@ public class insertAfterSearch {
        //System.out.println("count ==");
         System.out.println(l.mid);
        l.traverseList();
+    //    l.printReverse(l.head);
        
         
     }
